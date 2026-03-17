@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fantasy Squash</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">🎯</span>
+        <span class="logo-text">Fantasy<strong>Squash</strong></span>
+      </div>
+      <nav>
+        <button class="nav-btn active" data-view="players">Players</button>
+        <button class="nav-btn" data-view="myteam">My Team</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Players View -->
+    <section id="view-players" class="view active">
+      <div class="page-header">
+        <h1>Build Your Fantasy Team</h1>
+        <p>Select up to <strong>6 players</strong> within a <strong>100pt budget</strong>. Mix men's and women's players freely.</p>
+      </div>
+
+      <div class="budget-bar">
+        <div class="budget-info">
+          <span>Budget</span>
+          <span id="budget-used">0</span><span> / 100 pts</span>
+        </div>
+        <div class="budget-track">
+          <div id="budget-fill" class="budget-fill"></div>
+        </div>
+        <div class="team-count-info">
+          <span id="team-count">0</span><span> / 6 players</span>
+        </div>
+      </div>
+
+      <div class="tabs">
+        <button class="tab active" data-tab="men">Men's Tour</button>
+        <button class="tab" data-tab="women">Women's Tour</button>
+      </div>
+
+      <div id="player-grid" class="player-grid"></div>
+    </section>
+
+    <!-- My Team View -->
+    <section id="view-myteam" class="view">
+      <div class="page-header">
+        <h1>My Team</h1>
+        <p id="team-subtitle">Select players from the Players tab to build your squad.</p>
+      </div>
+
+      <div id="team-summary" class="team-summary hidden">
+        <div class="summary-stat">
+          <span class="stat-label">Players</span>
+          <span class="stat-value" id="summary-count">0 / 6</span>
+        </div>
+        <div class="summary-stat">
+          <span class="stat-label">Budget Used</span>
+          <span class="stat-value" id="summary-budget">0 / 100 pts</span>
+        </div>
+        <div class="summary-stat">
+          <span class="stat-label">Total Ranking Pts</span>
+          <span class="stat-value" id="summary-pts">0</span>
+        </div>
+      </div>
+
+      <div id="team-grid" class="team-grid"></div>
+
+      <div id="empty-team" class="empty-state">
+        <div class="empty-icon">🏸</div>
+        <p>Your team is empty.</p>
+        <button class="btn-primary" data-view="players">Browse Players</button>
+      </div>
+
+      <div id="team-actions" class="team-actions hidden">
+        <button id="clear-team" class="btn-danger">Clear Team</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
